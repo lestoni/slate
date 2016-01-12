@@ -24,6 +24,7 @@ under the License.
 
     <%= stylesheet_link_tag :screen, media: :screen %>
     <%= stylesheet_link_tag :print, media: :print %>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <% if current_page.data.search %>
       <%= javascript_include_tag  "all" %>
@@ -48,7 +49,9 @@ under the License.
       </span>
     </a>
     <div class="tocify-wrapper">
-      <%= image_tag "logo.png" %>
+      <h2>
+        Koncart - <span> API </span>
+      </h2>
       <% if language_tabs %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
@@ -60,12 +63,12 @@ under the License.
           <% end %>
         </div>
       <% end %>
-      <% if current_page.data.search %>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
-      <% end %>
+      <%#<% if current_page.data.search %>
+        <%#<div class="search">%>
+          <%#<input type="text" class="search" id="input-search" placeholder="Search">%>
+        <%#</div>%>
+        <%#<ul class="search-results"></ul>%>
+      <%#<% end %>
       <div id="toc">
       </div>
       <% if current_page.data.toc_footers %>

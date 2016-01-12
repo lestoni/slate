@@ -68,9 +68,19 @@ html, body {
   left: 0;
   bottom: 0;
   width: $nav-width;
-  background-color: $nav-bg;
   font-size: 13px;
   font-weight: bold;
+  background-color: #fafcfc;
+
+  &>h2 {
+    text-align:center;
+    border-bottom: 5px solid #eee;
+    padding-bottom: 20px;
+
+    span {
+       color: #4aafed;
+    }
+  }
 
   // language selector for mobile devices
   .lang-selector {
@@ -166,7 +176,7 @@ html, body {
   }
 
   li {
-    color: $nav-text;
+    color: grey;
     transition-property: background;
     transition-timing-function: linear;
     transition-duration: 230ms;
@@ -202,7 +212,12 @@ html, body {
     margin-top: 1em;
     border-top: 1px dashed $nav-footer-border-color;
 
-    li,a {
+    a {
+      color: grey;
+      text-decoration: none;
+    }
+
+    li {
       color: $nav-text;
       text-decoration: none;
     }
@@ -262,8 +277,9 @@ html, body {
   margin-left: $nav-width;
   position: relative;
   z-index: 10;
-  background-color: $main-bg;
   min-height: 100%;
+  background: white;
+  border: 2px solid #eee;
 
   padding-bottom: 1px; // prevent margin overflow
 
@@ -285,6 +301,7 @@ html, body {
     position: fixed;
     z-index: 50;
     border-bottom: 5px solid $lang-select-active-bg;
+    padding: 10px 25px;
   }
 }
 
@@ -300,6 +317,8 @@ html, body {
     padding: 0 10px;
     line-height: 30px;
     outline: 0;
+    padding: 2px 15px;
+    border-radius: 5px;
 
     &:active, &:focus {
       background-color: $lang-select-pressed-bg;
@@ -307,8 +326,12 @@ html, body {
     }
 
     &.active {
-      background-color: $lang-select-active-bg;
-      color: $lang-select-active-text;
+      background-color: #0099cc;
+      background: linear-gradient(to bottom,#5abaf0,#4aafed);
+      border-color: transparent;
+      color: #fff;
+      text-shadow: 0 0 0 rgba(255,255,255,0.5),0 1px 1px #0e74c3;
+
     }
   }
 
@@ -359,11 +382,11 @@ html, body {
     font-size: 30px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 3px solid #ccc;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ddd;
-    background-image: linear-gradient(to bottom, #fff, #f9f9f9);
+    border-top: 3px solid #ddd;
+    background-color: #F9F9F9;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -572,6 +595,7 @@ html, body {
 @media (max-width: $tablet-width) {
   .tocify-wrapper {
     left: -$nav-width;
+    background-color: #fafcfc;
 
     &.open {
       left: 0;
